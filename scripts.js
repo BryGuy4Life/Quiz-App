@@ -1,3 +1,4 @@
+/*
 const q1 = {
     question: 'String of quesiton to ask',
     a1:  {
@@ -43,3 +44,6 @@ const q2 = {
 };
 
 const questionArray = [q1, q2];
+*/
+const questionHolder = => [];
+const loadQuestionIntoHolder = questionObj =>;
