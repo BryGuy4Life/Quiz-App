@@ -1,0 +1,78 @@
+
+
+<!-- Start the Quiz Template -->
+    <h1>Warhammer 40k Rules Quiz Game</h1>
+    <h2>Test your knowledge on how well you actually know the rules to the popular table top game by Games-Workshop: Warhammer 40k.</h2>
+    <button class="btn-quiz" id="btn-start-quiz">Start The Quiz!</button>
+
+<!-- Quesitons Template -->
+    <div class="row">
+        <label class="radio-img-holder">
+            <input type="radio" name="answers" value="0">
+            <img src="img/skull_checkbox.png">
+        </label>
+        <label>${a1.answer}</label>
+    </div>
+    <div class="row">
+        <label class="radio-img-holder">
+            <input type="radio" name="answers" value="1">
+            <img src="img/skull_checkbox.png">
+        </label>
+        <label>${a2.answer}</label>
+    </div>
+    <div class="row">
+        <label class="radio-img-holder">
+            <input type="radio" name="answers" value="2">
+            <img src="img/skull_checkbox.png">
+        </label>
+        <label>${a3.answer}</label>
+    </div>
+    <div class="row">
+        <label class="radio-img-holder">
+            <input type="radio" name="answers" value="3">
+            <img src="img/skull_checkbox.png">
+        </label>
+        <label>${a4.answer}</label>
+    </div>
+
+<!-- End of Quiz Template -->
+`
+    <h1>The Quiz is finished! Your Results Are:</h1>
+    <h2>Correct: ${num}</h2>
+    <h2>Incorrect: ${10 - num}</h2>
+    <h2>Score: ${num}0%</h2>
+    <button class="btn-quiz" id="btn-restart-quiz">Let Me Try Again!</button>
+`
+
+<!-- Results Pop Up Correct -->
+`
+<div class="pop-up">
+    <div class="row">
+        <div class="col-4 popup-img-insert">
+            <img src="img/correct-answer.jpg">
+        </div>
+        <div class="col-8 popup-a-insert">
+            <h1>Correct!</h1>
+            <h2>Lord Inquisitor is pleased with your answer!</h2>
+            <button class="btn-quiz" id="btn-popup">Next Question, My Lord!</button>
+        </div>
+    </div>
+</div>
+`
+
+<!-- Results Pop Up Wrong -->
+`
+<div class="pop-up">
+    <div class="row">
+        <div class="col-4 popup-img-insert">
+            <img src="img/wrong-answer.jpg">
+        </div>
+        <div class="col-8 popup-a-insert">
+            <h1>Wrong!</h1>
+            <h2>You have failed your Lord Inquisitor! Do not let this happen again... Here is your correct answer.</h2>
+            <h3>${showCorrectAnswer}</h3>
+            <button class="btn-quiz" id="btn-popup">Next Question, My Lord!</button>
+        </div>
+    </div>
+</div>
+`

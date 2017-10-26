@@ -60,6 +60,20 @@ main {
 }
 .q-insert {
 }
+
+.btn-quiz {
+    margin: 50px 0 0 0;
+    padding: 10px;
+    font-size: 22px;
+    border: 2px solid #700206;
+    background-color: black;
+    color: white;
+}
+.btn-quiz:hover {
+    cursor: pointer;
+    color: #700206;
+}
+
 .a-row {
     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), black;
     border: 2px solid white;
@@ -70,8 +84,13 @@ main {
     border: 2px solid white;
     opacity: .8;
 }
+.prog-row .col-4 p {
+    margin: 10px 0;
+    line-height: 40px;
+}
 .btn-wrap {
-    height: 100%;
+    margin: 10px 0;
+    height: 40px;
 }
 .btn-submit {
     width: 100%;
@@ -81,4 +100,61 @@ main {
     font-size: 25px;
     z-index: 1000;
     opacity: 1;
+}
+.answer-label {
+    font-size: 20px;
+    display: inline-block;
+    line-height: 50px;
+    margin-left: 70px;
+}
+
+.radio-img-holder img {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+}
+label > input{ /* HIDE RADIO */
+    position: absolute; /* Remove input from document flow */
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+}
+label > input + img{ /* IMAGE STYLES */
+    cursor:pointer;
+    border:2px solid black;
+    filter: invert(100%);
+}
+label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
+    filter: invert(0%);
+    border:2px solid white;
+    background-color: #700206;
+    
+}
+
+/*Pop Up if answer was correct or wrong*/
+.cover-screen {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.pop-up {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -210px;
+    margin-left: -500px;
+    background-color: #700206;
+    z-index: 1000;
+}
+.popup-img-insert img {
+    width: 100%
+}
+
+.popup-a-insert .btn-quiz {
+    position: absolute;
+    bottom: 15px;
+    border: 2px solid white;
 }
