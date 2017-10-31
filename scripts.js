@@ -1,70 +1,5 @@
 "use strict";
-/*
-const makeQuestion = (q, a1, a2, a3, a4) => {
-    a1.indexOf('*')
-    return {
-        question: q,
-        a1,
-        a2,
-        a3,
-        a4,
-    }
-}
 
-const questionHolder = [
-    makeQuestion("What is the blah?", "answer ", "* answer 2", "answer 3", "ans 4")
-    makeQuestion("What is the blah?", "* answer ", " answer 2", "answer 3", "ans 4")
-]
-*/
-
-/*
-const q1 = {
-    question: 'String of quesiton to ask',
-    a1:  {
-        answer: 'String value of text answer to show user',
-        correct: true
-    
-    },
-    a2:  {
-        answer: 'String value of text answer to show user',
-        correct: false
-    },
-    a3:  {
-        answer: 'String value of text answer to show user',
-        correct: false
-    },
-    a4:  {
-        answer: 'String value of text answer to show user',
-        correct: false
-    }
-    
-};
-const q2 = {
-    question: 'String of quesiton to ask',
-    answersThatAreFalse: [
-        {
-            answer: 'String value of text answer to show user',
-            correct: true
-
-        },
-        {
-            answer: 'String value of text answer to show user',
-            correct: false
-        },
-        {
-            answer: 'String value of text answer to show user',
-            correct: false
-        },
-        {
-            answer: 'String value of text answer to show user',
-            correct: false
-        }
-    ]
-};
-
-const questionArray = [q1, q2];
-*/
-/////// ASK MICHAEL HOW TO PUT THIS INTO ANOTHER FILE AND CALL FROM THAT FILE /////////////
 const q1 = {
     question: 'How far does a Space Marine model move?',
     a1: {
@@ -331,36 +266,36 @@ const generateQuestionTemplate = (qNum, question) => {
 const generateAnswerTemplate = (a1, a2, a3, a4) => {
     return `
     <div class="row">
-        <label for="a1" class="answer-label">
-<div class="radio-img-holder">
-            <input id="a1" type="radio" name="answers" value="0">
-            <img src="img/skull_checkbox.png">
-        </div>
-${a1.answer}
-</label>
-    </div>
-    <div class="row">
-        <label for="a2" class="answer-label">
-<div class="radio-img-holder">
-            <input id="a2" type="radio" name="answers" value="1">
-            <img src="img/skull_checkbox.png">
-        </div>
-${a2.answer}
-</label>
-    </div>
-    <div class="row">
-        <label for="a3" class="answer-label">
+        <label for="a1" required class="answer-label">
             <div class="radio-img-holder">
-                <input id="a3" type="radio" name="answers" value="2">
+                <input id="a1" type="radio" required name="answers" value="0">
+                <img src="img/skull_checkbox.png">
+            </div>
+            ${a1.answer}
+        </label>
+    </div>
+    <div class="row">
+        <label for="a2" required class="answer-label">
+            <div class="radio-img-holder">
+                <input id="a2" type="radio" required name="answers" value="1">
+                <img src="img/skull_checkbox.png">
+            </div>
+            ${a2.answer}
+        </label>
+    </div>
+    <div class="row">
+        <label for="a3" required class="answer-label">
+            <div class="radio-img-holder">
+                <input id="a3" type="radio" required name="answers" value="2">
                 <img src="img/skull_checkbox.png">
             </div>
             ${a3.answer}
         </label>
     </div>
     <div class="row">
-        <label for="a4" class="answer-label">
+        <label for="a4" required class="answer-label">
             <div class="radio-img-holder">
-                <input id="a4" type="radio" name="answers" value="3">
+                <input id="a4" type="radio" required name="answers" value="3">
                 <img src="img/skull_checkbox.png">
             </div>
             ${a4.answer}
@@ -468,7 +403,12 @@ const handleSubmitAnswerBtn = () => {
     
     $("#btn-submit").click(function(e) {
         e.preventDefault();
-        gradeAnswer(getUserSelection(), getCurrentQuesiton(currentQuestionIndex));
+        if ($("input[name=answers]:checked", "#quizForm").val() === undefined) {
+            alert("Please choose an answer to continue the quiz");
+        } else {
+            gradeAnswer(getUserSelection(), getCurrentQuesiton(currentQuestionIndex));
+        }
+        
     });
 }
 
