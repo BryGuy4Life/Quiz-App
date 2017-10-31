@@ -331,32 +331,40 @@ const generateQuestionTemplate = (qNum, question) => {
 const generateAnswerTemplate = (a1, a2, a3, a4) => {
     return `
     <div class="row">
-        <label class="radio-img-holder">
-            <input type="radio" name="answers" value="0">
+        <label for="a1" class="answer-label">
+<div class="radio-img-holder">
+            <input id="a1" type="radio" name="answers" value="0">
             <img src="img/skull_checkbox.png">
-        </label>
-        <label class="answer-label">${a1.answer}</label>
+        </div>
+${a1.answer}
+</label>
     </div>
     <div class="row">
-        <label class="radio-img-holder">
-            <input type="radio" name="answers" value="1">
+        <label for="a2" class="answer-label">
+<div class="radio-img-holder">
+            <input id="a2" type="radio" name="answers" value="1">
             <img src="img/skull_checkbox.png">
-        </label>
-        <label class="answer-label">${a2.answer}</label>
+        </div>
+${a2.answer}
+</label>
     </div>
     <div class="row">
-        <label class="radio-img-holder">
-            <input type="radio" name="answers" value="2">
-            <img src="img/skull_checkbox.png">
+        <label for="a3" class="answer-label">
+            <div class="radio-img-holder">
+                <input id="a3" type="radio" name="answers" value="2">
+                <img src="img/skull_checkbox.png">
+            </div>
+            ${a3.answer}
         </label>
-        <label class="answer-label">${a3.answer}</label>
     </div>
     <div class="row">
-        <label class="radio-img-holder">
-            <input type="radio" name="answers" value="3">
-            <img src="img/skull_checkbox.png">
+        <label for="a4" class="answer-label">
+            <div class="radio-img-holder">
+                <input id="a4" type="radio" name="answers" value="3">
+                <img src="img/skull_checkbox.png">
+            </div>
+            ${a4.answer}
         </label>
-        <label class="answer-label">${a4.answer}</label>
     </div>
 `;
 }

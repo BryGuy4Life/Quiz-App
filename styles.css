@@ -10,6 +10,7 @@ html {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: 'Open Sans', sans-serif;
 }
 *, *:before, *:after {
     box-sizing: inherit;
@@ -97,38 +98,44 @@ main {
     height: 100%;
     border: none;
     background-color: #700206;
-    font-size: 25px;
+    font-size: 22px;
     z-index: 1000;
     opacity: 1;
+    color: white;
 }
 .answer-label {
     font-size: 20px;
     display: inline-block;
-    line-height: 50px;
-    margin-left: 70px;
 }
-
+.radio-img-holder{
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+}
 .radio-img-holder img {
     position: absolute;
     height: 50px;
     width: 50px;
-}
-label > input{ /* HIDE RADIO */
-    position: absolute; /* Remove input from document flow */
-    width: 50px;
-    height: 50px;
-    opacity: 0;
-}
-label > input + img{ /* IMAGE STYLES */
-    cursor:pointer;
+    top: 2px;
+    left: 2px;
     border:2px solid black;
     filter: invert(100%);
+    background-color: white;
+    z-index: 1000;
 }
-label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
+.radio-img-holder > input{ /* HIDE RADIO */
+    width: 50px;
+    height: 50px;
+/*    opacity: 0;*/
+}
+.radio-img-holder > input + img{ /* IMAGE STYLES */
+    cursor:pointer;
+    
+}
+.radio-img-holder > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
     filter: invert(0%);
     border:2px solid white;
     background-color: #700206;
-    
 }
 
 /*Pop Up if answer was correct or wrong*/
@@ -157,4 +164,19 @@ label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
     position: absolute;
     bottom: 15px;
     border: 2px solid white;
+}
+
+@media only screen and (max-width: 640px) {
+    .pop-up {
+        position: absolute;
+        width: 80%;
+        height: 80%;
+        top: 10%;
+        left: 10%;
+        background-color: #700206;
+        margin: 0;
+    }
+    .popup-img-insert img {
+        width: 30%
+    }
 }
