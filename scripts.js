@@ -268,7 +268,7 @@ const generateAnswerTemplate = (a1, a2, a3, a4) => {
     <div class="row">
         <label for="a1" class="answer-label">
             <div class="radio-img-holder">
-                <input id="a1" type="radio" required name="answers" value="0">
+                <input role="radiogroup" id="a1" type="radio" required name="answers" value="0">
                 <img alt="image of a skull for the checkbox" src="img/skull_checkbox.png">
             </div>
             ${a1.answer}
@@ -277,7 +277,7 @@ const generateAnswerTemplate = (a1, a2, a3, a4) => {
     <div class="row">
         <label for="a2" class="answer-label">
             <div class="radio-img-holder">
-                <input id="a2" type="radio" required name="answers" value="1">
+                <input role="radiogroup" id="a2" type="radio" required name="answers" value="1">
                 <img alt="image of a skull for the checkbox" src="img/skull_checkbox.png">
             </div>
             ${a2.answer}
@@ -286,7 +286,7 @@ const generateAnswerTemplate = (a1, a2, a3, a4) => {
     <div class="row">
         <label for="a3" class="answer-label">
             <div class="radio-img-holder">
-                <input id="a3" type="radio" required name="answers" value="2">
+                <input role="radiogroup" id="a3" type="radio" required name="answers" value="2">
                 <img alt="image of a skull for the checkbox" src="img/skull_checkbox.png">
             </div>
             ${a3.answer}
@@ -295,7 +295,7 @@ const generateAnswerTemplate = (a1, a2, a3, a4) => {
     <div class="row">
         <label for="a4" class="answer-label">
             <div class="radio-img-holder">
-                <input id="a4" type="radio" required name="answers" value="3">
+                <input role="radiogroup" id="a4" type="radio" required name="answers" value="3">
                 <img alt="image of a skull for the checkbox" src="img/skull_checkbox.png">
             </div>
             ${a4.answer}
