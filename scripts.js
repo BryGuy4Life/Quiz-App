@@ -19,7 +19,7 @@ const q1 = {
         correct: false
     }
 }
-        
+
 const q2 = {
     question: 'What is the firing range of a lascannon?',
     a1: {
@@ -39,7 +39,7 @@ const q2 = {
         correct: false
     }
 };
-        
+
 const q3 = {
     question: 'What is the toughness of a terminator?',
     a1: {
@@ -59,7 +59,7 @@ const q3 = {
         correct: true
     }
 };
-        
+
 const q4 = {
     question: 'What is the minimum distance a flyer must move?',
     a1: {
@@ -79,7 +79,7 @@ const q4 = {
         correct: true
     }
 };
-        
+
 const q5 = {
     question: 'What is the minimum distance models in a unit must maintain to keep with in unit coherency?',
     a1: {
@@ -99,7 +99,7 @@ const q5 = {
         correct: false
     }
 };
-        
+
 const q6 = {
     question: 'What is the strength value for commissar Yarrick?',
     a1: {
@@ -119,7 +119,7 @@ const q6 = {
         correct: false
     }
 };
-        
+
 const q7 = {
     question: 'What is the ballistic skill of an ork burna boyz?',
     a1: {
@@ -139,7 +139,7 @@ const q7 = {
         correct: true
     }
 };
-        
+
 const q8 = {
     question: 'What is the Weapon Skill of a genestealer?',
     a1: {
@@ -159,7 +159,7 @@ const q8 = {
         correct: false
     }
 };
-        
+
 const q9 = {
     question: 'What is maximum basic space marine capacity of a Land Raider?',
     a1: {
@@ -179,7 +179,7 @@ const q9 = {
         correct: false
     }
 };
-        
+
 const q10 = {
     question: 'How many sides does the standard dice have that is to be used to make rolls throughout the game?',
     a1: {
@@ -269,7 +269,7 @@ const generateAnswerTemplate = (a1, a2, a3, a4) => {
         <label for="a1" class="answer-label">
             <div class="radio-img-holder">
                 <input id="a1" type="radio" required name="answers" value="0">
-                <img src="img/skull_checkbox.png">
+                <img alt="image of a skull for the checkbox" src="img/skull_checkbox.png">
             </div>
             ${a1.answer}
         </label>
@@ -278,7 +278,7 @@ const generateAnswerTemplate = (a1, a2, a3, a4) => {
         <label for="a2" class="answer-label">
             <div class="radio-img-holder">
                 <input id="a2" type="radio" required name="answers" value="1">
-                <img src="img/skull_checkbox.png">
+                <img alt="image of a skull for the checkbox" src="img/skull_checkbox.png">
             </div>
             ${a2.answer}
         </label>
@@ -287,7 +287,7 @@ const generateAnswerTemplate = (a1, a2, a3, a4) => {
         <label for="a3" class="answer-label">
             <div class="radio-img-holder">
                 <input id="a3" type="radio" required name="answers" value="2">
-                <img src="img/skull_checkbox.png">
+                <img alt="image of a skull for the checkbox" src="img/skull_checkbox.png">
             </div>
             ${a3.answer}
         </label>
@@ -296,7 +296,7 @@ const generateAnswerTemplate = (a1, a2, a3, a4) => {
         <label for="a4" class="answer-label">
             <div class="radio-img-holder">
                 <input id="a4" type="radio" required name="answers" value="3">
-                <img src="img/skull_checkbox.png">
+                <img alt="image of a skull for the checkbox" src="img/skull_checkbox.png">
             </div>
             ${a4.answer}
         </label>
@@ -352,9 +352,9 @@ const removePreviousDiv = (parentDiv) => {
 
 // handle the start of the web page opening insertion template
 const quizAppEntry = () => {
-    
+
     insertDiv(getQuestionInsertDiv(), generateHomeTemplate());
-    
+
 }
 
 const addNewQuestion = (currentIndex) => {
@@ -381,7 +381,7 @@ const startQuiz = () => {
     addNewQuestion(currentQuestionIndex);
     addNewAnswers(currentQuestionIndex);
     handleUiQuestionIndex();
-    
+
 }
 
 const setupListenerForRestartBtn = () => {
@@ -391,7 +391,7 @@ const setupListenerForRestartBtn = () => {
 }
 
 const handleStartQuiz = () => {
-    
+
     $("#btn-start-quiz").click(function() {
        //start calling functions to load quesitons
         startQuiz();
@@ -400,7 +400,7 @@ const handleStartQuiz = () => {
 }
 
 const handleSubmitAnswerBtn = () => {
-    
+
     $("#btn-submit").click(function(e) {
         e.preventDefault();
         if ($("input[name=answers]:checked", "#quizForm").val() === undefined) {
@@ -408,7 +408,7 @@ const handleSubmitAnswerBtn = () => {
         } else {
             gradeAnswer(getUserSelection(), getCurrentQuesiton(currentQuestionIndex));
         }
-        
+
     });
 }
 
@@ -445,7 +445,7 @@ const gradeAnswer = (userAnswer, currentQuestion) => {
                 $('body').append(generateWrongAnswerTemplate(showCorrectAnswer));
                 resultPopUpBtnListener();
             }
-            
+
             // check to make sure if we are at the end of the question list
             if ((currentQuestionIndex + 1) == questionHolder.length) {
                 //show results div process here
@@ -458,9 +458,9 @@ const gradeAnswer = (userAnswer, currentQuestion) => {
                 // keep cycling questions
                 changeQuestion();
             }
-            
+
         }
-        
+
     }
 }
 
@@ -486,7 +486,7 @@ const handleUiQuestionIndex = () => {
 
 //function to start series of functions created above
 const run = () => {
-    //place all created running functions in order here 
+    //place all created running functions in order here
     hideDivs(getAnswerDiv(), getProgDiv());
     quizAppEntry();
     handleStartQuiz();
@@ -495,4 +495,4 @@ const run = () => {
 //start JS when DOM ready
 $(run)
 
-    
+
