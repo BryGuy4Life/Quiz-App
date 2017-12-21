@@ -266,7 +266,7 @@ const generateQuestionTemplate = (qNum, question) => {
 const generateAnswerTemplate = (a1, a2, a3, a4) => {
     return `
     <div class="row">
-        <label for="a1" required class="answer-label">
+        <label for="a1" class="answer-label">
             <div class="radio-img-holder">
                 <input id="a1" type="radio" required name="answers" value="0">
                 <img src="img/skull_checkbox.png">
@@ -275,7 +275,7 @@ const generateAnswerTemplate = (a1, a2, a3, a4) => {
         </label>
     </div>
     <div class="row">
-        <label for="a2" required class="answer-label">
+        <label for="a2" class="answer-label">
             <div class="radio-img-holder">
                 <input id="a2" type="radio" required name="answers" value="1">
                 <img src="img/skull_checkbox.png">
@@ -284,7 +284,7 @@ const generateAnswerTemplate = (a1, a2, a3, a4) => {
         </label>
     </div>
     <div class="row">
-        <label for="a3" required class="answer-label">
+        <label for="a3" class="answer-label">
             <div class="radio-img-holder">
                 <input id="a3" type="radio" required name="answers" value="2">
                 <img src="img/skull_checkbox.png">
@@ -293,7 +293,7 @@ const generateAnswerTemplate = (a1, a2, a3, a4) => {
         </label>
     </div>
     <div class="row">
-        <label for="a4" required class="answer-label">
+        <label for="a4" class="answer-label">
             <div class="radio-img-holder">
                 <input id="a4" type="radio" required name="answers" value="3">
                 <img src="img/skull_checkbox.png">
